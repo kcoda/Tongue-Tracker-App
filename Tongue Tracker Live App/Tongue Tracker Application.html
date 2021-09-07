@@ -1,0 +1,35 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tongue Tracker Live</title>
+    <meta name="description" content="Live data from the Tongue Tracker Device">
+    <link rel="stylesheet" href="css/styles.css">
+  </head>
+  <body onload="startup()">
+    <div id="container">
+      <div id="statusText">Click Here to Connect</div>
+      <div id="DrawWindow" styleClass="DrawWindow">
+        <canvas id="canvas"></canvas>
+        <input type="checkbox" id="history" name="history" value="enableHistory">
+        <label for="history" id="historylbl">Enable History Tracking</label><br>
+        <img id="testimg" src="img/grid.png" width="315" height="320" style="display:none">
+        <div>
+          <label id="xycoord"></label>
+        </div>
+        <button id="BeginTE" name="BeginTE" >Begin Timed Exploration</button>        
+        <label for="Duration" id="Durationlabel">Duration: </label>
+        <select name="Duration" id="Duration">
+          <option value="30000">30s</option>
+          <option value="60000">1m</option>
+          <option value="120000">2m</option>
+          <option value="300000">5m</option>
+        </select>      
+    </div>
+    <label id="timer"></label>
+    </div>
+    <script src="javascript/TongueTracker.js"></script>
+    <script src="javascript/app.js"></script>
+  </body>
+</html>
