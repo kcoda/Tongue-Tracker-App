@@ -16,7 +16,7 @@ class LocationEvent{
     this.x = x;
     this.y = y;
     var today = new Date();
-    this.time = (today.getTime() - starttime);
+    this.time = (window.performance.now() - starttime).toFixed(3);
   }
 }
 
@@ -38,8 +38,7 @@ beginTEbutton.addEventListener('click', function(){
   if(!logging){
     eventArray = [];
     logging = true;
-    var today = new Date();
-    loggingStartTime = today.getTime();
+    loggingStartTime = window.performance.now();
     beginTEbutton.textContent = 'Stop Timed Exploration';
     startTimedExploration();
   }
@@ -76,7 +75,7 @@ function handleLocationUpdate(Location) {
 }
 
 function drawPoints(x, y){
-  console.log('X: ' + x + ' Y: ' + y);
+  //console.log('X: ' + x + ' Y: ' + y);
   xycoordtext.textContent = ('X: ' + x + ' Y: ' + y);
 
   if(!historycheckbox.checked){
